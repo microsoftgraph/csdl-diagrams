@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CsdlToDiagram": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\Users\\Wamae\\source\\schema.csdl -s"
+    }
+  }
+}
