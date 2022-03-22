@@ -200,7 +200,7 @@ stages:
         displayName: publish CLI tool as executable
         inputs:
           command: 'publish'
-          arguments: -c Release --runtime win-x64 /p:PublishSingleFile=true --self-contained --output $(Build.ArtifactStagingDirectory)/Microsoft.Csdl.Diagram-v$(cliversion)
+          arguments: -c Release --runtime win-x64 /p:PublishSingleFile=true --self-contained true --output $(Build.ArtifactStagingDirectory)/Microsoft.Csdl.Diagram-v$(cliversion)
           projects: 'Microsoft.Csdl.Diagram/Microsoft.Csdl.Diagram.csproj'
           publishWebProjects: False
           zipAfterPublish: false 
