@@ -264,7 +264,7 @@ stages:
             - task: GitHubRelease@1
               displayName: 'GitHub release (create)'
               inputs:
-                gitHubConnection: 'Github-Michael-Wamae'
+                gitHubConnection: 'Michael-Wamae'
                 tagSource: userSpecifiedTag
                 tag: '$(artifactName)'
                 title: '$(artifactName)'
