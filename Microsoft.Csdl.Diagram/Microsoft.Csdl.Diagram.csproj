@@ -19,10 +19,11 @@
 	<PackageReadmeFile>README.md</PackageReadmeFile>
 	<PackageOutputPath>./../../artifacts</PackageOutputPath>
     <RepositoryUrl>https://github.com/microsoftgraph/csdl-diagrams</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <PackageType>DotNetCliTool</PackageType>
     <Nullable>enable</Nullable>
-    <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+	<AssemblyName>Microsoft.Csdl.Diagram</AssemblyName>
+    <RootNamespace>Microsoft.Csdl.Diagram</RootNamespace>
+	<SignAssembly>true</SignAssembly>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
