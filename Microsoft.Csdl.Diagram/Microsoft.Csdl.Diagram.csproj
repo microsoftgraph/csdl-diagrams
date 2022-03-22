@@ -14,7 +14,7 @@
     <Title>Microsoft.Csdl.Diagram</Title>
     <Description>Generates UML diagrams for OData CSDL files.</Description>
     <Copyright>2021 Microsoft Corporation</Copyright>
-    <RequireLicenseAcceptance>false</RequireLicenseAcceptance>
+    <RequireLicenseAcceptance>true</RequireLicenseAcceptance>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
 	<PackageReadmeFile>README.md</PackageReadmeFile>
 	<PackageOutputPath>./../../artifacts</PackageOutputPath>
@@ -45,13 +45,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Microsoft.Csdl.Plant\Microsoft.Csdl.Plant.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="..\LICENSE.txt">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
   </ItemGroup>
 
   <ItemGroup>

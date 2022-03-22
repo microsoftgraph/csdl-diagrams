@@ -9,7 +9,8 @@
     <PackageId>Microsoft.CsdlDiagrams.Net</PackageId>
     <Description>.Net standard 2.0 library to generate diagram source files (such as PlantUml) from OData CSDL files.</Description>
     <Copyright>(C) 2020 Microsoft Corporation.</Copyright>
-    <PackageLicenseFile>License.txt</PackageLicenseFile>
+	<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Title>Microsoft.CsdlDiagrams.Net</Title>
     <PackageProjectUrl>https://github.com/microsoftgraph/csdl-diagrams</PackageProjectUrl>
     <RepositoryUrl>https://github.com/microsoftgraph/csdl-diagrams</RepositoryUrl>
@@ -30,14 +31,7 @@
     <PackageReference Include="Microsoft.OData.Edm" Version="7.8.1" />
     <PackageReference Include="System.Text.Json" Version="4.7.2" />
   </ItemGroup>
-
-  <ItemGroup>
-    <None Include="..\LICENSE.txt">
-      <Pack>True</Pack>
-      <PackagePath></PackagePath>
-    </None>
-  </ItemGroup>
-
+	
   <ItemGroup>
     <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>

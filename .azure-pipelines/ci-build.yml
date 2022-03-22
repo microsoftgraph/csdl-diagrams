@@ -193,9 +193,9 @@ stages:
               $xml = [Xml] (Get-Content .\Microsoft.Csdl.Diagram\Microsoft.Csdl.Diagram.csproj)
               $version = $xml.Project.PropertyGroup.Version
               echo $version
-              echo "##vso[task.setvariable variable=hidiversion]$version"  
+              echo "##vso[task.setvariable variable=cliversion]$version"  
 
-      # publish hidi as an .exe
+      # publish cli tool as an .exe
       - task: DotNetCoreCLI@2
         displayName: publish CLI tool as executable
         inputs:
@@ -221,8 +221,8 @@ stages:
       - task: PublishBuildArtifacts@1
         displayName: 'Publish Artifact: CLI tool'
         inputs: 
-          ArtifactName: Microsoft.Csdl.Diagram-v$(hidiversion)
-          PathtoPublish: '$(Build.ArtifactStagingDirectory)/Microsoft.Csdl.Diagram-v$(hidiversion)'
+          ArtifactName: Microsoft.Csdl.Diagram-v$(cliversion)
+          PathtoPublish: '$(Build.ArtifactStagingDirectory)/Microsoft.Csdl.Diagram-v$(cliversion)'
 
 - stage: deploy
   condition: and(contains(variables['build.sourceBranch'], 'refs/heads/master'), succeeded())
