@@ -6,11 +6,11 @@ name: $(BuildDefinitionName)_$(SourceBranchName)_$(Date:yyyyMMdd)$(Rev:.r)
 trigger:
   branches:
     include:
-      - master
+      - main
 pr:
   branches:
     include:
-      - master
+      - main
 
 pool:
   name: Azure Pipelines
@@ -225,7 +225,7 @@ stages:
           PathtoPublish: '$(Build.ArtifactStagingDirectory)/Microsoft.Csdl.Diagram-v$(version)'
 
 - stage: deploy
-  condition: and(contains(variables['build.sourceBranch'], 'refs/heads/master'), succeeded())
+  condition: and(contains(variables['build.sourceBranch'], 'refs/heads/main'), succeeded())
   dependsOn: build
   jobs:
     - deployment: deploy_cli
@@ -260,7 +260,7 @@ stages:
                 command: push
                 packagesToPush: '$(Pipeline.Workspace)/Nugets/Microsoft.Csdl.Diagram.*.nupkg'
                 nuGetFeedType: external
-                publishFeedCredentials: 'OpenAPI Nuget Connection'
+                publishFeedCredentials: 'microsoftgraph NuGet connection'
             - task: GitHubRelease@1
               displayName: 'GitHub release (create)'
               inputs:
@@ -300,5 +300,5 @@ stages:
                 command: push
                 packagesToPush: '$(Pipeline.Workspace)/Nugets/Microsoft.Csdl.Plant.*.nupkg'
                 nuGetFeedType: external
-                publishFeedCredentials: 'OpenAPI Nuget Connection'
+                publishFeedCredentials: 'microsoftgraph NuGet connection'
 
