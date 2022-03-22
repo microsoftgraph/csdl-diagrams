@@ -200,7 +200,7 @@ stages:
         displayName: publish CLI tool as executable
         inputs:
           command: 'publish'
-          arguments: -c Release --runtime win-x64 /p:PublishSingleFile=true --self-contained --output $(Build.ArtifactStagingDirectory)/Microsoft.Csdl.Diagram-v$(cliversion) -p:PublishTrimmed=false
+          arguments: -c Release --runtime win-x64 /p:PublishSingleFile=true --self-contained --output $(Build.ArtifactStagingDirectory)/Microsoft.Csdl.Diagram-v$(cliversion)
           projects: 'Microsoft.Csdl.Diagram/Microsoft.Csdl.Diagram.csproj'
           publishWebProjects: False
           zipAfterPublish: false 
@@ -269,7 +269,7 @@ stages:
                 tag: '$(artifactName)'
                 title: '$(artifactName)'
                 releaseNotesSource: inline
-                assets: '$(artifactMainDirectory)\**\*.exe'
+                assets: '$(Pipeline.Workspace)\**\*.exe'
                 changeLogType: issueBased
     
     - deployment: deploy_lib
