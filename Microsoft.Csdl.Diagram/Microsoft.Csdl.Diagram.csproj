@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-	<LangVersion>10.0</LangVersion>
+	<LangVersion>9.0</LangVersion>
     <TargetFramework>net6.0</TargetFramework>
     <StartupObject>Microsoft.Csdl.Diagram.Program</StartupObject>
     <Version>1.0.0</Version>
