@@ -2,7 +2,7 @@
   "profiles": {
     "CsdlToDiagram": {
       "commandName": "Project",
-      "commandLineArgs": "C:\\Users\\Wamae\\source\\schema.csdl -s"
+      "commandLineArgs": "C:\\Users\\Wamae\\source\\new.csdl -s"
     }
   }
 }

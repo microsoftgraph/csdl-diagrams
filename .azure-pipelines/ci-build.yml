@@ -101,7 +101,7 @@ stages:
         displayName: 'ESRP CodeSigning'
         inputs:
           ConnectedServiceName: 'microsoftgraph ESRP CodeSign DLL and NuGet (AKV)'
-          FolderPath: src
+          FolderPath: $(Build.SourcesDirectory)
           signConfigType: inlineSignParams
           inlineOperation: |
             [
