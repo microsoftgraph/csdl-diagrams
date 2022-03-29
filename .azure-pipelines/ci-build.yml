@@ -79,7 +79,7 @@ stages:
         displayName: 'Run BinSkim - Product Binaries'
         inputs:
           InputType: Basic
-          AnalyzeTarget: '$(ProductBinPath)\**\Microsoft.CsdlDiagrams.Net.dll'
+          AnalyzeTarget: '$(ProductBinPath)\**\Microsoft.Csdl.Plant.dll'
           AnalyzeSymPath: '$(ProductBinPath)'
           AnalyzeVerbose: true
           AnalyzeHashes: true
