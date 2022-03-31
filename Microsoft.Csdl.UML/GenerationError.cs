@@ -1,4 +1,4 @@
-﻿namespace Microsoft.Csdl.Plant
+﻿namespace Microsoft.Csdl.UML
 {
     /// <summary>
     /// POCO for errors during generation.

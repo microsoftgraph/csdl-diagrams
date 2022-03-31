@@ -1,7 +1,6 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 
-namespace Microsoft.Csdl.Plant
+namespace Microsoft.Csdl.UML
 {
     public class PlantConverter
     {

@@ -1,8 +1,6 @@
-﻿namespace Microsoft.Csdl.Plant
+﻿namespace Microsoft.Csdl.UML
 {
-    using System;
     using System.Collections.Generic;
-    using System.Text;
 
     /// <summary>
     /// Options to configure generation

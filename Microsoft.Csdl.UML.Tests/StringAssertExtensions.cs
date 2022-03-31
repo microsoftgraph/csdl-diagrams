@@ -2,7 +2,7 @@ using System;
 using System.Text.RegularExpressions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Microsoft.Csdl.Plant.Tests
+namespace Microsoft.Csdl.UML.Tests
 {
     public static class StringAssertExtensions
     {

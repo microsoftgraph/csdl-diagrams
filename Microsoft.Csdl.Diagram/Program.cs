@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using CommandLine;
-using Microsoft.Csdl.Plant;
+using Microsoft.Csdl.UML;
 
 namespace Microsoft.Csdl.Diagram
 {

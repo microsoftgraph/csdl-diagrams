@@ -19,7 +19,7 @@ pool:
 variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
-  ProductBinPath: '$(Build.SourcesDirectory)\Microsoft.Csdl.Plant\bin\$(BuildConfiguration)' 
+  ProductBinPath: '$(Build.SourcesDirectory)\Microsoft.Csdl.UML\bin\$(BuildConfiguration)' 
 
 
 stages:
@@ -79,7 +79,7 @@ stages:
         displayName: 'Run BinSkim - Product Binaries'
         inputs:
           InputType: Basic
-          AnalyzeTarget: '$(ProductBinPath)\**\Microsoft.Csdl.Plant.dll'
+          AnalyzeTarget: '$(ProductBinPath)\**\Microsoft.Csdl.UML.dll'
           AnalyzeSymPath: '$(ProductBinPath)'
           AnalyzeVerbose: true
           AnalyzeHashes: true
@@ -145,10 +145,10 @@ stages:
       
       # Pack
       - task: DotNetCoreCLI@2
-        displayName: 'pack Csdl to Plant Diagram'
+        displayName: 'pack Csdl to UML Library'
         inputs:
           command: pack
-          projects: Microsoft.Csdl.Plant/Microsoft.Csdl.Plant.csproj
+          projects: Microsoft.Csdl.UML/Microsoft.Csdl.UML.csproj
           arguments: '-o $(Build.ArtifactStagingDirectory) --configuration $(BuildConfiguration) --no-build --include-symbols --include-source /p:SymbolPackageFormat=snupkg'
       
       # Pack
@@ -298,7 +298,7 @@ stages:
               displayName: 'NuGet push'
               inputs:
                 command: push
-                packagesToPush: '$(Pipeline.Workspace)/Nugets/Microsoft.Csdl.Plant.*.nupkg'
+                packagesToPush: '$(Pipeline.Workspace)/Nugets/Microsoft.Csdl.UML.*.nupkg'
                 nuGetFeedType: external
                 publishFeedCredentials: 'microsoftgraph NuGet connection'
 

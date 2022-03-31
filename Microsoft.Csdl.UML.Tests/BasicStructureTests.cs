@@ -1,10 +1,9 @@
-using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using static Microsoft.Csdl.Plant.Tests.CsdlTestHelper;
+using static Microsoft.Csdl.UML.Tests.CsdlTestHelper;
 
-namespace Microsoft.Csdl.Plant.Tests
+namespace Microsoft.Csdl.UML.Tests
 {
     [TestClass]
     public class BasicStructureTests

@@ -2,7 +2,6 @@
 // © Microsoft. All rights reserved.
 // </copyright>
 
-using System.Collections.Generic;
 using CommandLine;
 
 namespace Microsoft.Csdl.Diagram
