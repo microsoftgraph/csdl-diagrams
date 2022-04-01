@@ -11,7 +11,7 @@
     <Copyright>(C) 2020 Microsoft Corporation.</Copyright>
 	<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Title>>Microsoft.Csdl.UML</Title>
+    <Title>Microsoft.Csdl.UML</Title>
     <PackageProjectUrl>https://github.com/microsoftgraph/csdl-diagrams</PackageProjectUrl>
     <RepositoryUrl>https://github.com/microsoftgraph/csdl-diagrams</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
@@ -26,6 +26,9 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.OData.Edm" Version="7.10.0" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
     <PackageReference Include="System.Text.Json" Version="6.0.2" />
   </ItemGroup>
 	

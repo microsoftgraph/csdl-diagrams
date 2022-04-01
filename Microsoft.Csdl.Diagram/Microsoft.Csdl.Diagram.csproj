@@ -23,15 +23,8 @@
     <RootNamespace>Microsoft.Csdl.Diagram</RootNamespace>
 	<SignAssembly>true</SignAssembly>
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
+	<AssemblyOriginatorKeyFile>Microsoft.Csdl.Diagram.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Content Include="README.md">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-	  <Pack>True</Pack>
-      <PackagePath></PackagePath>
-	</Content>
-  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Microsoft.Csdl.UML\Microsoft.Csdl.UML.csproj" />
@@ -39,5 +32,8 @@
 
   <ItemGroup>
     <PackageReference Include="CommandLineParser" Version="2.8.0" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
 </Project>
