@@ -4,6 +4,8 @@
     <OutputType>Exe</OutputType>
 	<LangVersion>9.0</LangVersion>
     <TargetFramework>net6.0</TargetFramework>
+	<PackageIconUrl>http://go.microsoft.com/fwlink/?LinkID=288890</PackageIconUrl>
+	<PackageProjectUrl>https://github.com/microsoftgraph/csdl-diagrams</PackageProjectUrl>
     <StartupObject>Microsoft.Csdl.Diagram.Program</StartupObject>
     <Version>1.0.0</Version>
     <Authors>Microsoft</Authors>
