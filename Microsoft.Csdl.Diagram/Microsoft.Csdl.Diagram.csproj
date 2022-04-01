@@ -17,7 +17,6 @@
     <Copyright>2021 Microsoft Corporation</Copyright>
     <RequireLicenseAcceptance>true</RequireLicenseAcceptance>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-	<PackageReadmeFile>README.md</PackageReadmeFile>
 	<PackageOutputPath>./../../artifacts</PackageOutputPath>
     <RepositoryUrl>https://github.com/microsoftgraph/csdl-diagrams</RepositoryUrl>
     <Nullable>enable</Nullable>
