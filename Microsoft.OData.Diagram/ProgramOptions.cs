@@ -4,7 +4,7 @@
 
 using CommandLine;
 
-namespace Microsoft.Csdl.Diagram
+namespace Microsoft.OData.Diagram
 {
     public class ProgramOptions
     {

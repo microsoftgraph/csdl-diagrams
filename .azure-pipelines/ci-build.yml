@@ -19,7 +19,7 @@ pool:
 variables:
   buildPlatform: 'Any CPU'
   buildConfiguration: 'Release'
-  ProductBinPath: '$(Build.SourcesDirectory)\Microsoft.Csdl.UML\bin\$(BuildConfiguration)' 
+  ProductBinPath: '$(Build.SourcesDirectory)\Microsoft.OData.UML\bin\$(BuildConfiguration)' 
 
 
 stages:
@@ -50,7 +50,7 @@ stages:
       - task: DotNetCoreCLI@2
         displayName: 'build'
         inputs:
-          projects: '$(Build.SourcesDirectory)\Microsoft.Csdl.Diagram.sln'
+          projects: '$(Build.SourcesDirectory)\Microsoft.OData.Diagram.sln'
           arguments: '--configuration $(BuildConfiguration) --no-incremental'
 
       # Run the Unit test
@@ -58,7 +58,7 @@ stages:
         displayName: 'test'
         inputs:
           command: test
-          projects: '$(Build.SourcesDirectory)\Microsoft.Csdl.Diagram.sln'
+          projects: '$(Build.SourcesDirectory)\Microsoft.OData.Diagram.sln'
           arguments: '--configuration $(BuildConfiguration) --no-build'
 
       # CredScan
@@ -79,7 +79,7 @@ stages:
         displayName: 'Run BinSkim - Product Binaries'
         inputs:
           InputType: Basic
-          AnalyzeTarget: '$(ProductBinPath)\**\Microsoft.Csdl.UML.dll'
+          AnalyzeTarget: '$(ProductBinPath)\**\Microsoft.OData.UML.dll'
           AnalyzeSymPath: '$(ProductBinPath)'
           AnalyzeVerbose: true
           AnalyzeHashes: true
@@ -148,7 +148,7 @@ stages:
         displayName: 'pack Csdl to UML Library'
         inputs:
           command: pack
-          projects: Microsoft.Csdl.UML/Microsoft.Csdl.UML.csproj
+          projects: Microsoft.OData.UML/Microsoft.OData.UML.csproj
           arguments: '-o $(Build.ArtifactStagingDirectory) --configuration $(BuildConfiguration) --no-build --include-symbols --include-source /p:SymbolPackageFormat=snupkg'
       
       # Pack
@@ -156,7 +156,7 @@ stages:
         displayName: 'pack CLI tool'
         inputs:
           command: pack
-          projects: Microsoft.Csdl.Diagram/Microsoft.Csdl.Diagram.csproj
+          projects: Microsoft.OData.Diagram/Microsoft.OData.Diagram.csproj
           arguments: '-o $(Build.ArtifactStagingDirectory) --configuration $(BuildConfiguration) --no-build --include-symbols --include-source /p:SymbolPackageFormat=snupkg'
       
       - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@1
@@ -190,7 +190,7 @@ stages:
         inputs:
           targetType: 'inline'
           script: |
-              $xml = [Xml] (Get-Content .\Microsoft.Csdl.Diagram\Microsoft.Csdl.Diagram.csproj)
+              $xml = [Xml] (Get-Content .\Microsoft.OData.Diagram\Microsoft.OData.Diagram.csproj)
               $version = $xml.Project.PropertyGroup.Version
               echo $version
               echo "##vso[task.setvariable variable=version]$version"  
@@ -200,8 +200,8 @@ stages:
         displayName: publish CLI tool as executable
         inputs:
           command: 'publish'
-          arguments: -c Release --runtime win-x64 -p:PublishSingleFile=true --self-contained true --output $(Build.ArtifactStagingDirectory)/Microsoft.Csdl.Diagram-v$(version) -p:PublishTrimmed=true
-          projects: 'Microsoft.Csdl.Diagram/Microsoft.Csdl.Diagram.csproj'
+          arguments: -c Release --runtime win-x64 -p:PublishSingleFile=true --self-contained true --output $(Build.ArtifactStagingDirectory)/Microsoft.OData.Diagram-v$(version) -p:PublishTrimmed=true
+          projects: 'Microsoft.OData.Diagram/Microsoft.OData.Diagram.csproj'
           publishWebProjects: False
           zipAfterPublish: false 
 
@@ -221,8 +221,8 @@ stages:
       - task: PublishBuildArtifacts@1
         displayName: 'Publish Artifact: CLI tool'
         inputs: 
-          ArtifactName: Microsoft.Csdl.Diagram-v$(version)
-          PathtoPublish: '$(Build.ArtifactStagingDirectory)/Microsoft.Csdl.Diagram-v$(version)'
+          ArtifactName: Microsoft.OData.Diagram-v$(version)
+          PathtoPublish: '$(Build.ArtifactStagingDirectory)/Microsoft.OData.Diagram-v$(version)'
 
 - stage: deploy
   condition: and(contains(variables['build.sourceBranch'], 'refs/heads/main'), succeeded())
@@ -247,8 +247,8 @@ stages:
               inputs:
                 source: current
             - pwsh: |
-                $artifactMainDirectory = Get-ChildItem -Filter Microsoft.Csdl.Diagram-* -Directory -Recurse | select -First 1
-                $artifactName = $artifactMainDirectory.Name -replace "Microsoft.Csdl.Diagram-", ""
+                $artifactMainDirectory = Get-ChildItem -Filter Microsoft.OData.Diagram-* -Directory -Recurse | select -First 1
+                $artifactName = $artifactMainDirectory.Name -replace "Microsoft.OData.Diagram-", ""
                 #Set Variable $artifactName
                 Write-Host "##vso[task.setvariable variable=artifactName; isSecret=false; isOutput=true;]$artifactName"
                 Write-Host "##vso[task.setvariable variable=artifactMainDirectory; isSecret=false; isOutput=true;]$artifactMainDirectory"
@@ -258,7 +258,7 @@ stages:
               displayName: 'NuGet push'
               inputs:
                 command: push
-                packagesToPush: '$(Pipeline.Workspace)/Nugets/Microsoft.Csdl.Diagram.*.nupkg'
+                packagesToPush: '$(Pipeline.Workspace)/Nugets/Microsoft.OData.Diagram.*.nupkg'
                 nuGetFeedType: external
                 publishFeedCredentials: 'microsoftgraph NuGet connection'
             - task: GitHubRelease@1
@@ -287,7 +287,7 @@ stages:
                 artifact: Nugets
                 source: current
             - powershell: |
-                $fileNames = "$(Pipeline.Workspace)/Nugets/Microsoft.Csdl.Diagram.*.nupkg"
+                $fileNames = "$(Pipeline.Workspace)/Nugets/Microsoft.OData.Diagram.*.nupkg"
                 foreach($fileName in $fileNames) {
                   if(Test-Path $fileName) {
                     rm $fileName -Verbose
@@ -298,7 +298,7 @@ stages:
               displayName: 'NuGet push'
               inputs:
                 command: push
-                packagesToPush: '$(Pipeline.Workspace)/Nugets/Microsoft.Csdl.UML.*.nupkg'
+                packagesToPush: '$(Pipeline.Workspace)/Nugets/Microsoft.OData.UML.*.nupkg'
                 nuGetFeedType: external
                 publishFeedCredentials: 'microsoftgraph NuGet connection'
 

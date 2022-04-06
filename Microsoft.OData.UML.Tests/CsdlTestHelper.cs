@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Microsoft.Csdl.UML.Tests
+namespace Microsoft.OData.UML.Tests
 {
     public class CsdlTestHelper
     {

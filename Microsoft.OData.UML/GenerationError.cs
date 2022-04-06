@@ -1,4 +1,4 @@
-﻿namespace Microsoft.Csdl.UML
+﻿namespace Microsoft.OData.UML
 {
     /// <summary>
     /// POCO for errors during generation.

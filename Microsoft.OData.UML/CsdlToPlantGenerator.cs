@@ -1,7 +1,7 @@
 ﻿using System.IO;
 using System.Xml;
 
-namespace Microsoft.Csdl.UML
+namespace Microsoft.OData.UML
 {
     using System;
     using System.Collections.Generic;

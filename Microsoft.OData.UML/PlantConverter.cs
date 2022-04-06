@@ -1,6 +1,6 @@
 ﻿using System.Linq;
 
-namespace Microsoft.Csdl.UML
+namespace Microsoft.OData.UML
 {
     public class PlantConverter
     {

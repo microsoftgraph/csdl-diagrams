@@ -5,9 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using CommandLine;
-using Microsoft.Csdl.UML;
+using Microsoft.OData.UML;
 
-namespace Microsoft.Csdl.Diagram
+namespace Microsoft.OData.Diagram
 {
     static  class Program
     {

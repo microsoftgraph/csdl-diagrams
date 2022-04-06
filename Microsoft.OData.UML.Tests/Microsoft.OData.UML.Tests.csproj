@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Microsoft.Csdl.UML\Microsoft.Csdl.UML.csproj" />
+    <ProjectReference Include="..\Microsoft.OData.UML\Microsoft.OData.UML.csproj" />
   </ItemGroup>
 
 </Project>
