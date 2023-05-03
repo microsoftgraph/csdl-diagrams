@@ -8,7 +8,7 @@
     <Product>Csdl Diagrams</Product>
     <PackageId>Microsoft.OData.UML</PackageId>
     <Description>.Net standard 2.0 library to generate diagram source files (such as PlantUml) from OData CSDL files.</Description>
-    <Copyright>(C) 2020 Microsoft Corporation.</Copyright>
+	<Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
 	<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	<PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Title>Microsoft.OData.UML</Title>

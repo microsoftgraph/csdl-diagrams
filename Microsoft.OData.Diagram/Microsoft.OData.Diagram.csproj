@@ -14,7 +14,7 @@
     <PackAsTool>true</PackAsTool>
     <Title>Microsoft.OData.Diagram</Title>
     <Description>Generates UML diagrams for OData CSDL files.</Description>
-    <Copyright>2021 Microsoft Corporation</Copyright>
+	<Copyright>© Microsoft Corporation. All rights reserved.</Copyright>
     <RequireLicenseAcceptance>true</RequireLicenseAcceptance>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
 	<PackageOutputPath>./../../artifacts</PackageOutputPath>
