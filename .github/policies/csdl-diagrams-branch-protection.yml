@@ -1,0 +1,13 @@
+# Copyright (c) Microsoft Corporation.
+# Licensed under the MIT License.
+
+# File initially created using https://github.com/MIchaelMainer/policyservicetoolkit/blob/main/branch_protection_export.ps1.
+
+name: csdl-diagrams-branch-protection
+description: Branch protection policy for the csdl-diagrams repository
+resource: repository
+configuration:
+  branchProtectionRules:
+
+  # The following GitHub PolicyService properties are not yet supported: whoCanDismissReviews
+
