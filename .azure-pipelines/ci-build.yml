@@ -97,7 +97,7 @@ stages:
           CredScan: true
           PoliCheck: true
 
-      - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@5
+      - task: EsrpCodeSigning@6
         displayName: 'ESRP CodeSigning'
         inputs:
           ConnectedServiceName: 'Federated DevX ESRP Managed Identity Connection'
@@ -164,7 +164,7 @@ stages:
           projects: Microsoft.OData.Diagram/Microsoft.OData.Diagram.csproj
           arguments: '-o $(Build.ArtifactStagingDirectory) --configuration $(BuildConfiguration) --no-build --include-symbols --include-source /p:SymbolPackageFormat=snupkg'
       
-      - task: SFP.build-tasks.custom-build-task-1.EsrpCodeSigning@5
+      - task: EsrpCodeSigning@6
         displayName: 'ESRP CodeSigning Nuget Packages'
         inputs:
           ConnectedServiceName: 'Federated DevX ESRP Managed Identity Connection'
